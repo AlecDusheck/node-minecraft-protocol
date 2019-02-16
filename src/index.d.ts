@@ -38,7 +38,8 @@ declare module 'minecraft-protocol' {
 		port?: number
 		username: string
 		version?: string
-		skipValidation?: boolean
+		skipValidation?: boolean,
+		bypassNetworkCheck?: boolean
 	}
 
 	export class Server extends EventEmitter {

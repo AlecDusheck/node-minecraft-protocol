@@ -16,7 +16,7 @@ module.exports = function (client, options) {
       }
 
       // If port was not defined (defauls to 25565), host is not an ip neither localhost
-      if (options.port === 25565 && net.isIP(options.host) === 0 && options.host !== 'localhost') {
+      if (options.port === 25565 && net.isIP(options.host) === 0 && options.host !== 'localhost' && !options.bypassNetworkCheck) {
         // Try to resolve SRV records for the comain
         dns.resolveSrv('_minecraft._tcp.' + options.host, (err, addresses) => {
           // Error resolving domain
